@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strange Questions</title>
+  <style>
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, sans-serif;
+      background:#ffffff;
+      color:#111;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .wrap{
+      text-align:center;
+      width:440px;
+      max-width:90%;
+    }
+    h1{
+      font-size:1.7rem;
+      font-weight:500;
+      margin-bottom:0.3rem;
+    }
+    p{
+      color:#777;
+      font-size:0.9rem;
+    }
+    .card{
+      margin:2rem 0;
+      padding:2.2rem 1.5rem;
+      border-radius:22px;
+      background:#f5f5f5;
+      font-size:1.15rem;
+      line-height:1.6;
+      transition:all 0.3s ease;
+      min-height:5.5em;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    button{
+      border:none;
+      background:#111;
+      color:#fff;
+      padding:0.6rem 1.3rem;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:0.9rem;
+    }
+    footer{
+      margin-top:2rem;
+      font-size:0.7rem;
+      color:#aaa;
+      letter-spacing:0.12em;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>คำถามแปลก ๆ</h1>
+    <p>ไม่มีคำตอบถูกหรือผิด</p>
+
+    <div class="card" id="question">ลองกดดู</div>
+
+    <button onclick="randomQuestion()">สุ่มคำถาม</button>
+
+    <footer>think • feel • wonder</footer>
+  </div>
+
+  <script>
+    const questions = [
+      'ถ้าวันหนึ่งความทรงจำหายไปครึ่งหนึ่ง คุณจะเลือกเก็บเรื่องไหนไว้?',
+      'ถ้าเสียงในหัวคุณดังขึ้น คนอื่นจะได้ยินอะไร?',
+      'คุณคิดว่าตัวเองเปลี่ยนไปตอนไหน โดยไม่รู้ตัว?',
+      'ถ้าเวลาหยุดได้ 5 นาที คุณจะใช้มันกับอะไร?',
+      'มีเรื่องไหนที่คุณรู้สึกว่า "มันควรจะต่างออกไป" ไหม?',
+      'ถ้าอารมณ์ตอนนี้มีสี มันจะเป็นสีอะไร?',
+      'คุณยังเป็นคนเดิมกับเมื่อปีที่แล้วแค่ไหน?',
+      'ถ้าไม่ต้องอธิบายตัวเองให้ใครฟัง คุณจะใช้ชีวิตต่างจากเดิมไหม?',
+      'มีคำไหนที่คุณอยากได้ยินจากใครสักคน แต่ไม่เคยได้ยิน?',
+      'คุณคิดว่าความเงียบกำลังพยายามบอกอะไรคุณอยู่?',
+      'ถ้าเลือกได้หนึ่งอย่างที่จะไม่รู้ คุณจะไม่รู้อะไร?',
+      'ตอนนี้คุณกำลังหนีอะไรอยู่หรือเปล่า?',
+      'ถ้าความกลัวพูดได้ มันจะพูดกับคุณว่าอะไร?'
+    ];
+
+    function randomQuestion(){
+      const q = questions[Math.floor(Math.random()*questions.length)];
+      const card = document.getElementById('question');
+      card.style.transform = 'scale(0.97)';
+      setTimeout(()=>{
+        card.innerText = q;
+        card.style.transform = 'scale(1)';
+      },150);
+    }
+  </script>
+</body>
+</html>
